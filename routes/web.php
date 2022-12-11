@@ -19,3 +19,6 @@ Route::get('/', function () {
 Route::get('New', function () {
     return 'New';
 });
+Route::get('About_us', function () {
+    return 'About_us';
+});
