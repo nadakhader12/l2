@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Homecontroller;
+use App\Http\Controllers\WebController;
 
 /*
 |--------------------------------------------------------------------------
@@ -68,4 +69,8 @@ use App\Http\Controllers\Homecontroller;
 
 
 
-Route::get('/',[Homecontroller::class,'index'])->name('homepage');
+Route::get('/',[WebController::class,'index'])->name('web.index');
+Route::get('/about',[WebController::class,'about'])->name('web.about');
+Route::get('/contact',[WebController::class,'contact'])->name('web.contact');
+Route::get('/team',[WebController::class,'team'])->name('web.team');
+Route::get('/news/{id?}',[WebController::class,'news'])->name('web.news');
