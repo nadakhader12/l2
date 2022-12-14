@@ -1,9 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\WebController;
 use App\Http\Controllers\Homecontroller;
 use App\Http\Controllers\site2controller;
-use App\Http\Controllers\WebController;
+use App\Http\Controllers\site3controller;
 
 /*
 |--------------------------------------------------------------------------
@@ -84,3 +85,23 @@ Route::get('about',[site2controller::class,'about'])->name('about');
 Route::get('contact',[site2controller::class,'contact'])->name('contact');
 Route::get('post',[site2controller::class,'post'])->name('post');
 });
+//site3
+Route::prefix('site3')->name('site3.')->group(function(){
+   Route::get('/',[site3controller::class,'index'])->name('index');
+   Route::get('/index2',[site3controller::class,'index2'])->name('index2');
+   Route::get('testimonials',[site3controller::class,'testimonials'])->name('testimonials');
+   Route::get('faq',[site3controller::class,'faq'])->name('faq');
+   Route::get('pricing',[site3controller::class,'pricing'])->name('pricing');
+   Route::get('team',[site3controller::class,'team'])->name('team');
+   Route::get('about',[site3controller::class,'about'])->name('about');
+   Route::get('projects',[site3controller::class,'projects'])->name('projects');
+   Route::get('projects_single',[site3controller::class,'projects_single'])->name('projects_single');
+   Route::get('services',[site3controller::class,'services'])->name('services');
+   Route::get('service_single',[site3controller::class,'service_single'])->name('service_single');
+   Route::get('news_single',[site3controller::class,'news_single'])->name('news_single');
+   Route::get('news_left_sidebar',[site3controller::class,'news_left_sidebar'])->name('news_left_sidebar');
+   Route::get('news_right_sidebar',[site3controller::class,'news_right_sidebar'])->name('news_right_sidebar');
+   Route::get('contact',[site3controller::class,'contact'])->name('contact');
+   Route::get('typography',[site3controller::class,'typography'])->name('typography');
+   Route::get('error',[site3controller::class,'error'])->name('error');
+   });
