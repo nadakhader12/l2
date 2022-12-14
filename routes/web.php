@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Homecontroller;
+use App\Http\Controllers\site2controller;
 use App\Http\Controllers\WebController;
 
 /*
@@ -74,3 +75,12 @@ Route::get('/about',[WebController::class,'about'])->name('web.about');
 Route::get('/contact',[WebController::class,'contact'])->name('web.contact');
 Route::get('/team',[WebController::class,'team'])->name('web.team');
 Route::get('/news/{id?}',[WebController::class,'news'])->name('web.news');
+
+
+//site 2
+Route::prefix('site2')->name('site2.')->group(function(){
+Route::get('/',[site2controller::class,'index'])->name('index');
+Route::get('about',[site2controller::class,'about'])->name('about');
+Route::get('contact',[site2controller::class,'contact'])->name('contact');
+Route::get('post',[site2controller::class,'post'])->name('post');
+});
