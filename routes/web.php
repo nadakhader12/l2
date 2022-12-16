@@ -5,6 +5,7 @@ use App\Http\Controllers\WebController;
 use App\Http\Controllers\Homecontroller;
 use App\Http\Controllers\site2controller;
 use App\Http\Controllers\site3controller;
+use App\Http\Controllers\site4controller;
 
 /*
 |--------------------------------------------------------------------------
@@ -105,3 +106,13 @@ Route::prefix('site3')->name('site3.')->group(function(){
    Route::get('typography',[site3controller::class,'typography'])->name('typography');
    Route::get('error',[site3controller::class,'error'])->name('error');
    });
+// site4
+Route::prefix('site4')->name('site4.')->group(function(){
+    Route::get('about',[site4controller::class,'about'])->name('about');
+    Route::get('experience',[site4controller::class,'experience'])->name('experience');
+    Route::get('education',[site4controller::class,'education'])->name('education');
+    Route::get('skills',[site4controller::class,'skills'])->name('skills');
+    Route::get('interests',[site4controller::class,'interests'])->name('interests');
+    Route::get('awards',[site4controller::class,'awards'])->name('awards');
+
+    });
