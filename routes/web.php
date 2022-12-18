@@ -1,12 +1,14 @@
 <?php
 
-use App\Http\Controllers\Formscontroller;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\WebController;
 use App\Http\Controllers\Homecontroller;
+use App\Http\Controllers\Formscontroller;
 use App\Http\Controllers\site2controller;
 use App\Http\Controllers\site3controller;
 use App\Http\Controllers\site4controller;
+use App\Http\Controllers\site5controller;
+use League\Flysystem\UrlGeneration\PrefixPublicUrlGenerator;
 
 /*
 |--------------------------------------------------------------------------
@@ -127,3 +129,19 @@ Route::post('form2',[Formscontroller::class,'form2_data'])->name('form2_data');
 Route::get('form3',[Formscontroller::class,'form3'])->name('form3');
 Route::post('form3',[Formscontroller::class,'form3_data'])->name('form3_data');
 
+Route::get('form4',[Formscontroller::class,'form4'])->name('form4');
+Route::post('form4',[Formscontroller::class,'form4_data'])->name('form4_data');
+
+//site5
+Route::prefix('site5')->name('site5.')->group(function(){
+   Route::get('/',[site5controller::class,'home1'])->name('home1');
+   Route::get('home2',[site5controller::class,'home2'])->name('home2');
+   Route::get('home3',[site5controller::class,'home3'])->name('home3');
+   Route::get('home4',[site5controller::class,'home4'])->name('home4');
+   Route::get('about',[site5controller::class,'about'])->name('about');
+   Route::get('services',[site5controller::class,'services'])->name('services');
+   Route::get('projects',[site5controller::class,'projects'])->name('projects');
+   Route::get('single_project',[site5controller::class,'single_project'])->name('single_project');
+   Route::get('pricing',[site5controller::class,'pricing'])->name('pricing');
+   Route::get('contact',[site5controller::class,'contact'])->name('contact');
+});
